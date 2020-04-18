@@ -106,7 +106,7 @@ endfunction
 
 function! clap#installer#download_binary() abort
   if has('win32')
-    let cmd = 'Powershell.exe -File '.s:plugin_root_dir.'\install.ps1'
+    let cmd = 'Powershell.exe -ExecutionPolicy ByPass -File "'.s:plugin_root_dir.'\install.ps1"'
   else
     let cmd = './install.sh'
   endif
